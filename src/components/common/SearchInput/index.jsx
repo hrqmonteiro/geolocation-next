@@ -45,12 +45,15 @@ export default function SearchInput({ buttonLink }) {
       <S.Form>
         <form>
           <input value={value} placeholder='Seu endereço...' />
-
-          <Link href='/plans'>
-            <a>
-              <button>Enviar</button>
-            </a>
-          </Link>
+          {value ? (
+            <Link href='/plans'>
+              <a>
+                <button>Enviar</button>
+              </a>
+            </Link>
+          ) : (
+            <button disabled>Enviar</button>
+          )}
         </form>
       </S.Form>
 
@@ -66,15 +69,7 @@ export default function SearchInput({ buttonLink }) {
     </S.Container>
   ) : (
     <S.Container>
-      <S.Form>
-        <input placeholder='Seu endereço' />
-      </S.Form>
-
-      <Link href={buttonLink}>
-        <a>
-          <S.Botao>Voltar</S.Botao>
-        </a>
-      </Link>
+      <S.Subtitulo>Por favor, permita o acesso à Geolocalização!</S.Subtitulo>
     </S.Container>
   )
 }
