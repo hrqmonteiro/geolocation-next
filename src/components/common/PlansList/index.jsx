@@ -110,10 +110,12 @@ export default function PlansList() {
             <div>TV1, Internet 2, Telefone Fixo 1, Adicional 1</div>
             <div>
               <div>R${calculatePlanOne()}</div>
-              <div>{`${calculateDistance(
-                dummyPlans.list[0].coords.lat,
-                currentLatitude
-              ).toFixed(2)}KM`}</div>
+              <div>{`${Math.abs(
+                calculateDistance(
+                  dummyPlans.list[0].coords.lat,
+                  currentLatitude
+                ).toFixed(2)
+              )}KM`}</div>
             </div>
           </li>
           <li>
@@ -121,10 +123,12 @@ export default function PlansList() {
             <div>TV2, Telefone Fixo 2, Adicional 1</div>
             <div>
               <div>R${calculatePlanTwo()}</div>
-              <div>{`${calculateDistance(
-                dummyPlans.list[1].coords.lat,
-                currentLatitude
-              ).toFixed(2)}KM`}</div>
+              <div>{`${Math.abs(
+                calculateDistance(
+                  dummyPlans.list[1].coords.lat,
+                  currentLatitude
+                ).toFixed(2)
+              )}KM`}</div>
             </div>
           </li>
         </ul>
