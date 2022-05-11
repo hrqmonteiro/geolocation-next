@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
-import useGeolocation from 'react-hook-geolocation'
+import useGeolocation from '../../functions/Geolocation'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import * as S from './styles'
 
 export default function SearchInput({ buttonLink }) {
-  const router = useRouter()
   const geolocation = useGeolocation()
   const [value, setValue] = useState('')
   const [currentLatitude, setCurrentLatitude] = useState('')
@@ -42,18 +40,17 @@ export default function SearchInput({ buttonLink }) {
     setCurrentLongitude(`${geolocation.longitude}`)
   }
 
-  function handleOnSubmit() {
-    if (currentLatitude !== '' && currentLongitude !== '') {
-      router.push('/plans')
-    }
-  }
-
   return !geolocation.error ? (
     <S.Container>
       <S.Form>
-        <form onSubmit={handleOnSubmit}>
+        <form>
           <input value={value} placeholder='Seu endereço...' />
-          <button type='submit'>Enviar</button>
+
+          <Link href='/plans'>
+            <a>
+              <button>Enviar</button>
+            </a>
+          </Link>
         </form>
       </S.Form>
 
