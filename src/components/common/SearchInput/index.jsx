@@ -69,9 +69,9 @@ export default function SearchInput({ buttonLink }) {
     </S.Container>
   ) : (
     <S.Container>
-      <S.Input>
+      <S.Form>
         <input placeholder='Seu endereço' />
-      </S.Input>
+      </S.Form>
 
       <Link href={buttonLink}>
         <a>
