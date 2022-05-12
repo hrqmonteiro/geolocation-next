@@ -1,24 +1,19 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: 50px auto;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-`
+  align-items: start;
+  justify-content: start;
+  text-align: left;
 
-export const Titulo = styled.h1`
-  font-size: 50px;
-  margin-top: 40px;
-`
-
-export const Paragrafo = styled.p`
-  font-size: 18px;
-  margin-top: 20px;
-  text-align: center;
+  a {
+    color: red;
+    font-weight: bold;
+  }
 `
 
 export const BotaoContainer = styled.div`

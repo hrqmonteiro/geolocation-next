@@ -74,6 +74,13 @@ export const Form = styled.div`
   }
 `
 
+export const BotaoContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: start;
+`
+
 export const Botao = styled.button`
   border: none;
   margin-top: 30px;

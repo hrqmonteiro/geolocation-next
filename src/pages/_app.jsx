@@ -9,8 +9,10 @@ function MyApp({ Component, pageProps }) {
         <title>OCTUPUS</title>
       </Head>
 
-      <Header />
-      <Component {...pageProps} />
+      <div>
+        <Header />
+        <Component {...pageProps} />
+      </div>
     </div>
   )
 }

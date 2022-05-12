@@ -14,15 +14,15 @@ export default function Started({ buttonLink }) {
         Phasellus quis ultrices magna, id ultricies turpis.
       </S.Paragrafo>
 
-      <S.Botao>
-        <Link href={buttonLink}>
-          <a>
+      <Link href={buttonLink}>
+        <S.BotaoContainer>
+          <S.Botao>
             <div style={{ color: '#FFF', textDecoration: 'none' }}>
               Procurar
             </div>
-          </a>
-        </Link>
-      </S.Botao>
+          </S.Botao>
+        </S.BotaoContainer>
+      </Link>
     </S.Container>
   )
 }

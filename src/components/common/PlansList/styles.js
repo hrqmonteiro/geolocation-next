@@ -37,6 +37,32 @@ export const Titulo = styled.h1`
   font-size: 30px;
 `
 
+export const Undertitle = styled.div`
+  margin-top: 10px;
+
+  button {
+    border: none;
+    color: inherit;
+    background: inherit;
+  }
+
+  a {
+    color: black;
+  }
+
+  a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+`
+
+export const BotaoContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: start;
+`
+
 export const Botao = styled.button`
   border: none;
   margin-top: 30px;

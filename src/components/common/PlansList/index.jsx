@@ -133,9 +133,17 @@ export default function PlansList() {
           </li>
         </ul>
 
-        <Link href='/search'>
-          <S.Botao>Voltar</S.Botao>
+        <Link href='/maps'>
+          <S.Undertitle>
+            <a>Visualizar no mapa</a>
+          </S.Undertitle>
         </Link>
+
+        <S.BotaoContainer>
+          <Link href='/search'>
+            <S.Botao>Voltar</S.Botao>
+          </Link>
+        </S.BotaoContainer>
       </S.Container>
     </>
   )
