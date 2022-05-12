@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import dummyPlans from './plans.json'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import * as S from './styles'
 
@@ -30,14 +29,12 @@ export default function PlansList() {
         `https://octupus-challenge-three.vercel.app/api/options/?lat=${currentLatitude}&lon=${currentLongitude}`,
         { mode: 'cors' }
       )
-      setPlans(response.json())
+      setPlans(response.list.json())
       return await response.json()
     } catch (err) {
       console.log(err)
     }
   }
-
-  getPlans()
 
   function calculatePrice(price, kmpoint, kmlat) {
     return price + (kmpoint - kmlat)
@@ -49,26 +46,26 @@ export default function PlansList() {
 
   function calculatePlanOne() {
     const firstFeature = calculatePrice(
-      dummyPlans.list[0].price,
-      dummyPlans.list[0].coords.lat,
+      plans[0].price,
+      plans[0].coords.lat,
       currentLatitude
     ).toFixed(2)
 
     const secondFeature = calculatePrice(
-      dummyPlans.list[5].price,
-      dummyPlans.list[5].coords.lat,
+      plans[5].price,
+      plans[5].coords.lat,
       currentLatitude
     ).toFixed(2)
 
     const thirdFeature = calculatePrice(
-      dummyPlans.list[2].price,
-      dummyPlans.list[2].coords.lat,
+      plans[2].price,
+      plans[2].coords.lat,
       currentLatitude
     ).toFixed(2)
 
     const fourthFeature = calculatePrice(
-      dummyPlans.list[6].price,
-      dummyPlans.list[6].coords.lat,
+      plans[6].price,
+      plans[6].coords.lat,
       currentLatitude
     ).toFixed(2)
 
@@ -81,20 +78,20 @@ export default function PlansList() {
 
   function calculatePlanTwo() {
     const firstFeature = calculatePrice(
-      dummyPlans.list[1].price,
-      dummyPlans.list[1].coords.lat,
+      plans[1].price,
+      plans[1].coords.lat,
       currentLatitude
     ).toFixed(2)
 
     const secondFeature = calculatePrice(
-      dummyPlans.list[3].price,
-      dummyPlans.list[3].coords.lat,
+      plans[3].price,
+      plans[3].coords.lat,
       currentLatitude
     ).toFixed(2)
 
     const thirdFeature = calculatePrice(
-      dummyPlans.list[6].price,
-      dummyPlans.list[6].coords.lat,
+      plans[6].price,
+      plans[6].coords.lat,
       currentLatitude
     ).toFixed(2)
 
@@ -114,10 +111,9 @@ export default function PlansList() {
             <div>
               <div>R${calculatePlanOne()}</div>
               <div>{`${Math.abs(
-                calculateDistance(
-                  dummyPlans.list[0].coords.lat,
-                  currentLatitude
-                ).toFixed(2)
+                calculateDistance(plans[0].coords.lat, currentLatitude).toFixed(
+                  2
+                )
               )}KM`}</div>
             </div>
           </li>
@@ -127,10 +123,9 @@ export default function PlansList() {
             <div>
               <div>R${calculatePlanTwo()}</div>
               <div>{`${Math.abs(
-                calculateDistance(
-                  dummyPlans.list[1].coords.lat,
-                  currentLatitude
-                ).toFixed(2)
+                calculateDistance(plans[1].coords.lat, currentLatitude).toFixed(
+                  2
+                )
               )}KM`}</div>
             </div>
           </li>
