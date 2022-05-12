@@ -27,7 +27,8 @@ export default function PlansList() {
   async function getPlans() {
     try {
       const response = await fetch(
-        `https://octupus-challenge.vercel.app/api/options/?lat=${currentLatitude}&lon=${currentLongitude}`
+        `https://octupus-challenge-three.vercel.app/api/options/?lat=${currentLatitude}&lon=${currentLongitude}`,
+        { mode: 'cors' }
       )
       setPlans(response.json())
       return await response.json()
@@ -35,6 +36,8 @@ export default function PlansList() {
       console.log(err)
     }
   }
+
+  getPlans()
 
   function calculatePrice(price, kmpoint, kmlat) {
     return price + (kmpoint - kmlat)
